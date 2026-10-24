@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mobile Hub Padma · Smartphones, Accessories & Service</title>
+<meta name="description" content="Mobile Hub Padma — smartphones, accessories & trusted service on Padma–Itkhori Rd, Jharkhand. Open daily 9 am – 9 pm."/>
+<meta name="theme-color" content="#05080d"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Crect x='22' y='13' width='20' height='38' rx='5' fill='none' stroke='%2305080d' stroke-width='4'/%3E%3Cline x1='28' y1='44' x2='36' y2='44' stroke='%2305080d' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080d; --card:rgba(255,255,255,.035); --line:rgba(255,255,255,.08);
+  --text:#eaf2f8; --muted:#94a6b4; --acc:#67e8f9;
+  --grad:linear-gradient(120deg,#67e8f9,#60a5fa 50%,#c084fc);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:radial-gradient(1200px 600px at 50% -10%,rgba(56,189,248,.08),transparent 60%),var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Sora',sans-serif;letter-spacing:-.02em;line-height:1.15}
+a{color:inherit;text-decoration:none}
+iframe{border:0;display:block}
+img{display:block}
+::selection{background:rgba(34,211,238,.3)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:8px}::-webkit-scrollbar-track{background:transparent}
+.container{width:min(1120px,92%);margin:0 auto}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--acc)}
+.eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,backdrop-filter .35s}
+.nav.scrolled{background:rgba(5,8,13,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:.75rem;font-family:'Sora';font-weight:700;font-size:1.06rem}
+.brand .mark{width:38px;height:38px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#05202b;box-shadow:0 6px 20px rgba(56,189,248,.35)}
+.brand .mark svg{width:19px;height:19px}
+.brand small{color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.nav-links{display:flex;gap:2.1rem;font-weight:600;font-size:.92rem;color:var(--muted)}
+.nav-links a{position:relative;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;border-radius:2px;background:var(--grad);transition:width .3s}
+.nav-links a:hover{color:var(--text)}.nav-links a:hover::after{width:100%}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.6rem;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid transparent;transition:transform .3s,box-shadow .3s,background .3s,border-color .3s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--grad);color:#06202b;box-shadow:0 10px 30px rgba(56,189,248,.3)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(56,189,248,.42)}
+.btn-ghost{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(255,255,255,.09);border-color:rgba(103,232,249,.4)}
+.btn.small{padding:.62rem 1.15rem;font-size:.85rem}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:1}
+.orb-a{width:520px;height:520px;left:-140px;top:-120px;background:radial-gradient(circle at 30% 30%,rgba(34,211,238,.5),rgba(34,211,238,0) 70%);animation:float 16s ease-in-out infinite}
+.orb-b{width:460px;height:460px;right:-120px;top:14%;background:radial-gradient(circle at 60% 40%,rgba(167,139,250,.45),rgba(167,139,250,0) 70%);animation:float 20s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(var(--px,0px),var(--py,0px))}50%{transform:translate(calc(var(--px,0px) + 34px),calc(var(--py,0px) - 28px))}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%)}
+.hero-in{position:relative;z-index:2;text-align:center}
+.hero h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:800}
+.hero .sub{max-width:560px;margin:1.2rem auto 2.3rem;color:var(--muted);font-size:clamp(1rem,2vw,1.13rem)}
+.hero-ctas{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem 1.05rem;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:.83rem;font-weight:600;color:var(--muted);backdrop-filter:blur(8px)}
+.status .dot{width:8px;height:8px;border-radius:50%;background:#34d399;animation:beat 2s infinite}
+.status.closed .dot{background:#fbbf24;animation:none}
+.status.mini{padding:.35rem .8rem;font-size:.74rem}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)}70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.up{animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero-photo{position:relative;z-index:2;margin:3.4rem auto 0;width:min(880px,100%);border-radius:26px;padding:1px;background:linear-gradient(140deg,rgba(103,232,249,.65),rgba(96,165,250,.25),rgba(192,132,252,.55));box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.hero-photo img{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:25px;filter:saturate(1.05)}
+
+/* SECTIONS */
+.section{padding:clamp(70px,10vw,110px) 0}
+.sec-head{margin-bottom:clamp(2rem,5vw,3.2rem);display:flex;flex-direction:column;gap:.9rem}
+.sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:700}
+.sec-head p{color:var(--muted);max-width:520px}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:2rem 1.8rem;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .45s,box-shadow .45s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 200px at 20% 0%,rgba(34,211,238,.14),transparent 60%);opacity:0;transition:opacity .45s}
+.card:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.35);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.card:hover::before{opacity:1}
+.card .ic{width:48px;height:48px;border-radius:14px;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.25);display:grid;place-items:center;color:var(--acc);margin-bottom:1.3rem}
+.card .ic svg{width:22px;height:22px}
+.card h3{font-size:1.15rem;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* BUSY GRAPH */
+.chart-panel{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:clamp(1.6rem,4vw,2.6rem);position:relative;overflow:hidden}
+.chart-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 240px at 80% 0%,rgba(96,165,250,.10),transparent 60%);pointer-events:none}
+.chart-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:2.4rem;position:relative}
+.chart-head strong{font-family:'Sora';font-size:1.35rem;display:block;line-height:1.2}
+.chart-head #chartLabel{color:var(--muted);font-size:.92rem;font-weight:600}
+.chip{padding:.42rem .95rem;border-radius:999px;background:rgba(103,232,249,.12);border:1px solid rgba(103,232,249,.3);color:var(--acc);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.chip.live{background:rgba(52,211,153,.14);border-color:rgba(52,211,153,.4);color:#34d399}
+.chart{display:flex;gap:clamp(5px,1.4vw,14px);align-items:flex-end;height:190px;margin-bottom:34px}
+.slot{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;position:relative}
+.slot .bar{width:100%;max-width:38px;height:100%;display:flex;align-items:flex-end}
+.slot .fill{width:100%;height:var(--h);border-radius:999px;background:linear-gradient(180deg,#67e8f9,#60a5fa 60%,#818cf8);opacity:.35;transform:scaleY(0);transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),opacity .3s,box-shadow .3s}
+.reveal.in .fill{transform:scaleY(1)}
+.slot:hover .fill{opacity:.75}
+.slot.sel .fill{opacity:1;background:linear-gradient(180deg,#a5f3fc,#60a5fa 45%,#c084fc);box-shadow:0 10px 30px rgba(96,165,250,.45)}
+.slot.sel::before{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:calc(var(--h) + 10px);height:30px;width:1px;background:repeating-linear-gradient(180deg,var(--acc) 0 2px,transparent 2px 6px);opacity:.75}
+.slot .tick{position:absolute;bottom:-26px;font-size:.72rem;color:var(--muted);font-weight:700}
+
+/* VISIT */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.row{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.4rem;border-bottom:1px solid var(--line);transition:background .3s}
+.row:last-child{border-bottom:0}
+.row:hover{background:rgba(255,255,255,.03)}
+.row .ic{flex:0 0 42px;height:42px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);display:grid;place-items:center;color:var(--acc)}
+.row .ic svg{width:19px;height:19px}
+.row .txt{flex:1;min-width:0}
+.row .lbl{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.row .val{font-weight:600;font-size:.97rem}
+.row .val a:hover{color:var(--acc)}
+.go{margin-left:auto;display:inline-flex;align-items:center;gap:.35rem;color:var(--acc);font-weight:700;font-size:.84rem;white-space:nowrap}
+.go svg{width:14px;height:14px;transition:transform .3s}
+.go:hover svg{transform:translate(3px,-3px)}
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:440px}
+.map iframe{width:100%;height:100%;min-height:440px;filter:invert(.9) hue-rotate(180deg) saturate(.6) brightness(.95);transition:filter .5s}
+.map:hover iframe{filter:none}
+
+/* CTA */
+.cta-panel{position:relative;border-radius:28px;padding:clamp(2.2rem,6vw,3.6rem);text-align:center;overflow:hidden;border:1px solid rgba(34,211,238,.25);background:linear-gradient(180deg,rgba(34,211,238,.08),rgba(167,139,250,.06))}
+.cta-panel::before{content:"";position:absolute;width:420px;height:420px;left:50%;top:-260px;transform:translateX(-50%);background:radial-gradient(circle,rgba(103,232,249,.25),transparent 70%);pointer-events:none}
+.cta-panel h3{font-size:clamp(1.6rem,4vw,2.3rem);position:relative}
+.cta-panel p{color:var(--muted);max-width:460px;margin:1rem auto 1.9rem;position:relative}
+.cta-panel .hero-ctas{position:relative}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--line);padding:3rem 0 2.2rem;background:rgba(255,255,255,.02)}
+.foot-in{display:flex;flex-direction:column;align-items:center;gap:1.05rem;text-align:center}
+.foot-logo{width:88px;height:88px;border-radius:50%;object-fit:cover;border:2px solid rgba(103,232,249,.45);box-shadow:0 0 0 7px rgba(103,232,249,.08),0 14px 40px rgba(0,0,0,.45)}
+.foot-brand{font-family:'Sora';font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:.55rem}
+.foot-brand small{color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.foot-links{display:flex;gap:1.6rem;font-weight:600;font-size:.9rem;color:var(--muted)}
+.foot-links a:hover{color:var(--acc)}
+.copy{color:var(--muted);font-size:.82rem}
+
+/* CREDIT (sabse last) */
+.credit{margin-top:1.6rem;display:flex;flex-direction:column;align-items:center;gap:.18rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--muted);transition:color .3s}
+.credit:hover{color:var(--acc)}
+.cr{position:relative;display:inline-block}
+.crown{position:absolute;left:50%;bottom:calc(100% + 1px);transform:translateX(-50%);font-size:.8rem;line-height:1;pointer-events:none;animation:crown 3s ease-in-out infinite}
+@keyframes crown{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-2px)}}
+.credit-sub{font-size:.64rem;opacity:.7;letter-spacing:.14em}
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:grid;place-items:center;color:#fff;box-shadow:0 12px 30px rgba(37,211,102,.35);transition:transform .3s;animation:beat-wa 2.6s infinite}
+.wa-float:hover{transform:translateY(-4px) scale(1.06)}
+.wa-float svg{width:26px;height:26px;fill:currentColor}
+@keyframes beat-wa{0%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,0)}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){.nav-links{display:none}.visit-grid{grid-template-columns:1fr}.hero{padding-top:130px}.hero-photo img{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.up{opacity:1;transform:none}.fill{transform:scaleY(1)!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-in">
+    <a href="#home" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><line x1="10.5" y1="18" x2="13.5" y2="18"/></svg></span>
+      Mobile Hub <small>Padma</small>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#times">Busy Hours</a>
+      <a href="#visit">Visit Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-primary small" href="tel:+918789377191">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="grid-bg"></div>
+  <div class="container hero-in">
+    <div class="status up" style="--d:.05s" data-status><span class="dot"></span><span data-status-text>Open now · closes 9:00 pm</span></div>
+    <h1 class="up" style="--d:.15s;margin-top:1.4rem">Mobile Hub <span class="grad">Padma</span></h1>
+    <p class="sub up" style="--d:.28s">Smartphones, accessories & trusted service — all under one roof.</p>
+    <div class="hero-ctas up" style="--d:.4s">
+      <a class="btn btn-primary" href="tel:+918789377191"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now</a>
+      <a class="btn btn-ghost" href="https://wa.me/918789377191" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17s.94 2.52 1.07 2.69c.13.17 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.65.1.5-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29"/></svg>WhatsApp</a>
+      <a class="btn btn-ghost" href="https://maps.app.goo.gl/LNNz6MYgmgsgownK6?g_st=aw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Directions</a>
+    </div>
+    <div class="hero-photo up" style="--d:.55s">
+      <img src="modilehub.png" alt="Mobile Hub Padma store"/>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="services">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>Everything your phone needs.</h2>
+      </div>
+      <div class="cards">
+        <div class="card reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><line x1="10.5" y1="18" x2="13.5" y2="18"/></svg></span><h3>Smartphones</h3><p>Latest models & top brands, ready in store.</p></div>
+        <div class="card reveal" style="--d:.12s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span><h3>Accessories</h3><p>Cases, chargers, audio & everyday essentials.</p></div>
+        <div class="card reveal" style="--d:.24s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><h3>Care & Service</h3><p>Repairs and support, handled with care.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="times">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Popular times</span>
+        <h2>Plan your visit.</h2>
+      </div>
+      <div class="chart-panel reveal">
+        <div class="chart-head">
+          <div>
+            <strong id="chartTime">9 am</strong>
+            <span id="chartLabel">Usually not too busy</span>
+          </div>
+          <span class="chip" id="chartChip">Today</span>
+        </div>
+        <div class="chart" id="chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Visit us</span>
+        <h2>Find us in Padma.</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="panel reveal">
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <span class="txt"><span class="lbl">Hours</span><span class="val">Open daily · 9:00 am – 9:00 pm</span></span>
+            <span class="status mini" data-status><span class="dot"></span><span data-status-text>Open now</span></span>
+          </div>
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span class="txt"><span class="lbl">Address</span><span class="val">Padma – Itkhori Rd, Padma, Jharkhand 825411</span></span>
+            <a class="go" href="https://maps.app.goo.gl/LNNz6MYgmgsgownK6?g_st=aw" target="_blank" rel="noopener">Directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span class="txt"><span class="lbl">Phone</span><span class="val"><a href="tel:+918789377191">087893 77191</a></span></span>
+            <a class="go" href="tel:+918789377191">Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17s.94 2.52 1.07 2.69c.13.17 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.65.1.5-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29"/></svg></span>
+            <span class="txt"><span class="lbl">WhatsApp</span><span class="val">Message us</span></span>
+            <a class="go" href="https://wa.me/918789377191" target="_blank" rel="noopener">Chat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="txt"><span class="lbl">Instagram</span><span class="val"><a href="https://www.instagram.com/mobilehubpadma" target="_blank" rel="noopener">@mobilehubpadma</a></span></span>
+            <a class="go" href="https://www.instagram.com/mobilehubpadma" target="_blank" rel="noopener">Follow <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </div>
+        <div class="map reveal" style="--d:.12s">
+          <iframe title="Mobile Hub Padma on Google Maps" loading="lazy" src="https://www.google.com/maps?q=Mobile+Hub+Padma,+Padma,+Itkhori+Rd,+Jharkhand+825411&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="padding-top:0">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <h3>Need help choosing?</h3>
+        <p>Call or WhatsApp us for prices, stock & service.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+918789377191"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>087893 77191</a>
+          <a class="btn btn-ghost" href="https://wa.me/918789377191" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17s.94 2.52 1.07 2.69c.13.17 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.65.1.5-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29"/></svg>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container foot-in">
+    <img src="logo.png" alt="Mobile Hub logo" class="foot-logo"/>
+    <span class="foot-brand">Mobile Hub <small>Padma</small></span>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/mobilehubpadma" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/918789377191" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://maps.app.goo.gl/LNNz6MYgmgsgownK6?g_st=aw" target="_blank" rel="noopener">Directions</a>
+    </div>
+    <span class="copy">© <span id="yr"></span> Mobile Hub · Padma – Itkhori Rd, Jharkhand 825411</span>
+
+    <!-- sabse last : developer credit -->
+    <a class="credit" href="https://www.instagram.com/infinity_god_x" target="_blank" rel="noopener">
+      <span>developer by <span class="cr"><span class="crown">👑</span>B</span>HOLA JI · @INFINITY_GOD_X</span>
+      <span class="credit-sub">insta for connect</span>
+    </a>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918789377191" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17s.94 2.52 1.07 2.69c.13.17 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.65.1.5-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+function status(){
+  const now=new Date(),h=now.getHours()+now.getMinutes()/60;
+  const open=h>=9&&h<21;
+  document.querySelectorAll('[data-status]').forEach(el=>{
+    el.classList.toggle('closed',!open);
+    el.querySelector('[data-status-text]').textContent=open?'Open now · closes 9:00 pm':'Closed · opens 9:00 am';
+  });
+}
+status();setInterval(status,30000);
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+const orbs=document.querySelectorAll('.orb');
+if(matchMedia('(pointer:fine)').matches){
+  addEventListener('mousemove',e=>{
+    const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    orbs.forEach((o,i)=>{const f=i?-28:28;o.style.setProperty('--px',(x*f)+'px');o.style.setProperty('--py',(y*f)+'px');});
+  });
+}
+
+/* ---- Busy-hours graph ---- */
+const BUSY=[14,26,33,40,36,42,48,60,72,84,88,80,66]; /* 9am .. 9pm */
+const AXIS={0:'9a',3:'12p',6:'3p',9:'6p',12:'9p'};
+const hrLabel=h=>h<12?h+' am':h===12?'12 pm':(h-12)+' pm';
+const phrase=v=>v<25?'Usually not too busy':v<45?'A little busy':v<70?'Usually busy':'As busy as it gets';
+const chart=document.getElementById('chart');
+BUSY.forEach((v,i)=>{
+  const h=i+9;
+  const slot=document.createElement('button');
+  slot.type='button';slot.className='slot';
+  slot.style.setProperty('--h',v+'%');
+  slot.style.setProperty('--d',(i*0.06)+'s');
+  slot.setAttribute('aria-label',hrLabel(h)+' — '+phrase(v));
+  slot.innerHTML='<span class="bar"><span class="fill"></span></span>'+(AXIS[i]?'<span class="tick">'+AXIS[i]+'</span>':'');
+  slot.addEventListener('click',()=>select(i));
+  chart.appendChild(slot);
+});
+function select(i){
+  document.querySelectorAll('.slot').forEach((s,j)=>s.classList.toggle('sel',j===i));
+  const h=i+9;
+  document.getElementById('chartTime').textContent=hrLabel(h);
+  document.getElementById('chartLabel').textContent=phrase(BUSY[i]);
+  const chip=document.getElementById('chartChip'),nowH=new Date().getHours();
+  chip.textContent=(h===nowH)?'Now':'Today';
+  chip.classList.toggle('live',h===nowH);
+}
+const nowH=new Date().getHours();
+select((nowH>=9&&nowH<=21)?nowH-9:10);
+</script>
+</body>
+</html>
